@@ -1,0 +1,95 @@
+{
+  "title": "Top nationalities by Victorian enrolments, 2025",
+  "data": {
+    "url": "data/top_nationalities_2025.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 4
+  },
+  "encoding": {
+    "y": {
+      "field": "nationality",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "enrolments_2025",
+      "type": "quantitative",
+      "title": "Enrolments",
+      "axis": {
+        "format": "~s"
+      }
+    },
+    "color": {
+      "field": "rank_change_from_2024",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          -2,
+          0,
+          2
+        ],
+        "range": [
+          "#be123c",
+          "#94a3b8",
+          "#0f766e"
+        ]
+      },
+      "legend": {
+        "title": "Rank change"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "rank_2025",
+        "title": "2025 rank"
+      },
+      {
+        "field": "nationality"
+      },
+      {
+        "field": "enrolments_2025",
+        "format": ","
+      },
+      {
+        "field": "rank_change_from_2024"
+      }
+    ]
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "gridColor": "#e7e2d9",
+      "domainColor": "#c9c1b4",
+      "tickColor": "#c9c1b4",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "title": {
+      "font": "Fraunces, Georgia, serif",
+      "fontSize": 16,
+      "color": "#302c25",
+      "anchor": "start"
+    }
+  }
+}

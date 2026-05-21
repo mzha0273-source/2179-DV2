@@ -1,0 +1,171 @@
+{
+  "title": "Where international enrolments are concentrated, 2025",
+  "height": 430,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -27
+    ],
+    "scale": 520,
+    "translate": [
+      300,
+      230
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "sphere": {}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f8f3ea",
+        "stroke": "#ddd6ca"
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            10,
+            10
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#e7e2d9",
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.id == 36 || datum.id == '036'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e2efe8",
+        "stroke": "#8aa79b",
+        "strokeWidth": 1.2
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_market_share_2025.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.82,
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "market_share_percent",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              80,
+              2600
+            ]
+          },
+          "legend": {
+            "title": "Market share %"
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.state == 'VIC'",
+            "value": "#be123c"
+          },
+          "value": "#0f766e"
+        },
+        "tooltip": [
+          {
+            "field": "state"
+          },
+          {
+            "field": "market_share_percent",
+            "title": "Market share %"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_market_share_2025.csv"
+      },
+      "mark": {
+        "type": "text",
+        "dy": -18,
+        "fontWeight": "bold",
+        "fontSize": 12,
+        "color": "#302c25"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state"
+        }
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "gridColor": "#e7e2d9",
+      "domainColor": "#c9c1b4",
+      "tickColor": "#c9c1b4",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "title": {
+      "font": "Fraunces, Georgia, serif",
+      "fontSize": 16,
+      "color": "#302c25",
+      "anchor": "start"
+    }
+  }
+}

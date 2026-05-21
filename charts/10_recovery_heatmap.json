@@ -1,0 +1,88 @@
+{
+  "title": "Recovery matrix: each metric compared with 2019",
+  "data": {
+    "url": "data/recovery_index.csv"
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null
+    },
+    "y": {
+      "field": "metric",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Exports",
+        "Enrolments",
+        "Commencements",
+        "Visa lodgements"
+      ]
+    },
+    "color": {
+      "field": "index_2019_100",
+      "type": "quantitative",
+      "title": "2019 = 100",
+      "scale": {
+        "scheme": "redyellowgreen",
+        "domain": [
+          30,
+          100,
+          132
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "metric"
+      },
+      {
+        "field": "year"
+      },
+      {
+        "field": "index_2019_100",
+        "title": "Index"
+      }
+    ]
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "gridColor": "#e7e2d9",
+      "domainColor": "#c9c1b4",
+      "tickColor": "#c9c1b4",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "title": {
+      "font": "Fraunces, Georgia, serif",
+      "fontSize": 16,
+      "color": "#302c25",
+      "anchor": "start"
+    }
+  }
+}

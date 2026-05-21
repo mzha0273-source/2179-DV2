@@ -1,0 +1,14 @@
+Data sources (figures transcribed on 22 May 2026)
+
+1. Study Melbourne, Top charts and insights into Victoria's international education sector, page last updated 15 May 2026.
+   - Education-related services exports, Victoria, 2019-2025 ($billion), source noted by Study Melbourne as ABS International Trade: Supplementary Information, Calendar Year, Table 3.
+   - International student enrolments, Victoria, 2019-2025, source noted as Australian Government Department of Education International Student Data YTD December 2025.
+   - International student commencements, Victoria, 2019-2025, source noted as Australian Government Department of Education International Student Data YTD December 2025.
+   - Sector share, state market share, and top nationalities for 2025, source noted as Department of Education International Student Data YTD December 2025.
+   URL: https://studymelbourne.vic.gov.au/industry/top-charts-and-insights
+
+2. Study Melbourne / Australian Government Department of Home Affairs via data.gov.au.
+   - Offshore primary student visas lodged, Victoria, February year-to-date 2019-2026.
+   URL: https://studymelbourne.vic.gov.au/industry/top-charts-and-insights
+
+Note: All rounded values follow the published Study Melbourne table labels: enrolments/commencements to nearest thousand, nationalities to nearest hundred, exports in AUD billions, and visa lodgements to nearest hundred/thousand as displayed.

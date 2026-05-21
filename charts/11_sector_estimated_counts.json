@@ -1,0 +1,86 @@
+{
+  "title": "Estimated enrolments by sector, 2025",
+  "data": {
+    "url": "data/sector_share_2025.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 6
+  },
+  "encoding": {
+    "x": {
+      "field": "estimated_enrolments_2025",
+      "type": "quantitative",
+      "title": "Estimated enrolments from 322,000 total",
+      "axis": {
+        "format": "~s"
+      }
+    },
+    "y": {
+      "field": "sector",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "color": {
+      "field": "sector",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "range": [
+          "#0f766e",
+          "#14b8a6",
+          "#f59e0b",
+          "#a78bfa",
+          "#f472b6"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "sector"
+      },
+      {
+        "field": "share_percent"
+      },
+      {
+        "field": "estimated_enrolments_2025",
+        "format": ","
+      }
+    ]
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "gridColor": "#e7e2d9",
+      "domainColor": "#c9c1b4",
+      "tickColor": "#c9c1b4",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "title": {
+      "font": "Fraunces, Georgia, serif",
+      "fontSize": 16,
+      "color": "#302c25",
+      "anchor": "start"
+    }
+  }
+}

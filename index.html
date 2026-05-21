@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victoria's International Education Recovery</title>
+  <meta name="description" content="FIT2179 Data Visualisation 2 single-page Vega-Lite visualisation about Victoria's international education recovery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,850&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="eyebrow">FIT2179 Data Visualisation 2 · Vega-Lite story</div>
+    <h1>Victoria’s international education recovery is strong — but uneven</h1>
+    <p class="lead">
+      From 2019 to 2025, Victoria’s international education sector moved through a sharp contraction,
+      a rapid rebound, and a more selective 2025 market. This page follows the recovery through
+      enrolments, commencements, export value, student visas, source countries, sectors and state share.
+    </p>
+    <div class="kpi-strip" aria-label="Key metrics">
+      <div><span>$17.9b</span><small>education-related service exports in 2025</small></div>
+      <div><span>322k</span><small>international enrolments in Victoria in 2025</small></div>
+      <div><span>30.5%</span><small>Victoria's national enrolment market share in 2025</small></div>
+      <div><span>52%</span><small>of Victorian international enrolments in higher education</small></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-intro">
+      <p class="chapter">01 · The recovery pattern</p>
+      <h2>Recovery did not happen at the same speed for every indicator</h2>
+      <p>
+        Export value reached a new high in 2025, while commencements and visa lodgements show a more cautious pipeline.
+        The contrast matters because total enrolments include continuing students, while commencements and visas are earlier signals of future demand.
+      </p>
+    </section>
+
+    <section class="grid two">
+      <article class="card wide">
+        <div class="chart" id="vis-01"></div>
+        <p class="insight">Export value is above 2019, but commencements and visa lodgements are still weaker signals.</p>
+      </article>
+      <article class="card">
+        <div class="chart" id="vis-02"></div>
+        <p class="insight">Victorian enrolments peaked at 328,000 in 2024 and eased to 322,000 in 2025.</p>
+      </article>
+      <article class="card">
+        <div class="chart" id="vis-03"></div>
+        <p class="insight">Commencements fell from 172,000 in 2024 to 147,000 in 2025.</p>
+      </article>
+      <article class="card wide">
+        <div class="chart" id="vis-04"></div>
+        <p class="insight">The high 2025 export value sits beside slightly lower enrolments, suggesting value recovered faster than volume.</p>
+      </article>
+    </section>
+
+    <section class="section-intro">
+      <p class="chapter">02 · Where demand sits</p>
+      <h2>The recovery is concentrated by state, sector and source market</h2>
+      <p>
+        Victoria remains the second-largest Australian state for international enrolment market share. Within Victoria,
+        higher education and VET dominate the sector mix, and India plus China account for the largest source-country volumes.
+      </p>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="chart" id="vis-05"></div>
+        <p class="insight">Higher education is the largest sector, with 52% of Victorian international enrolments.</p>
+      </article>
+      <article class="card">
+        <div class="chart" id="vis-06"></div>
+        <p class="insight">NSW and Victoria together account for most of the national enrolment market share.</p>
+      </article>
+      <article class="card">
+        <div class="chart" id="vis-07"></div>
+        <p class="insight">India and China form the two largest source markets for Victoria in 2025.</p>
+      </article>
+      <article class="card">
+        <div class="chart" id="vis-08"></div>
+        <p class="insight">Nepal and Indonesia moved up the ranking, while Colombia and the Philippines moved down.</p>
+      </article>
+    </section>
+
+    <section class="section-intro">
+      <p class="chapter">03 · Signals for the next cycle</p>
+      <h2>Early indicators point to a tighter, more competitive market</h2>
+      <p>
+        The February visa-lodgement series does not measure enrolments directly, but it is useful as an early signal.
+        It shows a strong post-border-reopening rebound in 2023 followed by a lower level in 2025 and 2026.
+      </p>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="chart" id="vis-09"></div>
+        <p class="insight">February YTD offshore primary visa lodgements recovered slightly in 2026 after the 2025 low.</p>
+      </article>
+      <article class="card">
+        <div class="chart" id="vis-10"></div>
+        <p class="insight">The heatmap separates high-value recovery from softer new-student indicators.</p>
+      </article>
+      <article class="card">
+        <div class="chart" id="vis-11"></div>
+        <p class="insight">The 2025 sector shares imply about 167,000 higher education enrolments and 113,000 VET enrolments.</p>
+      </article>
+      <article class="card">
+        <div class="chart" id="vis-12"></div>
+        <p class="insight">The top two nationalities contribute more than half of the top-10 source-market total.</p>
+      </article>
+    </section>
+
+    <section class="closing">
+      <h2>Overall message</h2>
+      <p>
+        Victoria’s international education sector has recovered strongly in export value and remains nationally important.
+        However, the pipeline indicators suggest the post-pandemic rebound is no longer simply about growth everywhere:
+        future strength depends on balancing state competition, sector mix and source-market concentration.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Author:</strong> Mengfan Zhang · <strong>Date:</strong> May 2026</p>
+    <p>
+      <strong>Data sources:</strong> Study Melbourne “Top charts and insights into Victoria’s international education sector”
+      using ABS International Trade: Supplementary Information; Australian Government Department of Education International Student Data;
+      and Australian Government Department of Home Affairs student visa lodgement data via data.gov.au.
+    </p>
+    <p>
+      <strong>AI acknowledgement:</strong> Generative AI was used for code drafting and wording support. Data values were transcribed from the cited public sources and checked against the published tables.
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

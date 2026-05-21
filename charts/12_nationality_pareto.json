@@ -1,0 +1,122 @@
+{
+  "title": "Top-10 concentration curve",
+  "data": {
+    "url": "data/top_nationalities_2025.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "opacity": 0.45,
+        "color": "#0f766e"
+      },
+      "encoding": {
+        "x": {
+          "field": "nationality",
+          "type": "ordinal",
+          "sort": {
+            "field": "rank_2025"
+          },
+          "title": null,
+          "axis": {
+            "labelAngle": -35
+          }
+        },
+        "y": {
+          "field": "enrolments_2025",
+          "type": "quantitative",
+          "title": "Enrolments",
+          "axis": {
+            "format": "~s"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "nationality"
+          },
+          {
+            "field": "enrolments_2025",
+            "format": ","
+          },
+          {
+            "field": "cumulative_percent_of_top10",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true
+        },
+        "strokeWidth": 3,
+        "color": "#b45309"
+      },
+      "encoding": {
+        "x": {
+          "field": "nationality",
+          "type": "ordinal",
+          "sort": {
+            "field": "rank_2025"
+          }
+        },
+        "y": {
+          "field": "cumulative_percent_of_top10",
+          "type": "quantitative",
+          "title": "Cumulative % of top 10",
+          "axis": {
+            "orient": "right",
+            "format": ".0f"
+          },
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "gridColor": "#e7e2d9",
+      "domainColor": "#c9c1b4",
+      "tickColor": "#c9c1b4",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "title": {
+      "font": "Fraunces, Georgia, serif",
+      "fontSize": 16,
+      "color": "#302c25",
+      "anchor": "start"
+    }
+  }
+}

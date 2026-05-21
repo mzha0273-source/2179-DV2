@@ -1,0 +1,96 @@
+{
+  "title": "Export value recovered faster than enrolment volume",
+  "data": {
+    "url": "data/vic_international_education_yearly.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "opacity": 0.85,
+    "stroke": "white",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "x": {
+      "field": "enrolments",
+      "type": "quantitative",
+      "title": "Enrolments",
+      "axis": {
+        "format": "~s"
+      }
+    },
+    "y": {
+      "field": "education_exports_billion_aud",
+      "type": "quantitative",
+      "title": "Education-related service exports (AUD $b)"
+    },
+    "size": {
+      "field": "commencements",
+      "type": "quantitative",
+      "title": "Commencements",
+      "scale": {
+        "range": [
+          80,
+          900
+        ]
+      }
+    },
+    "color": {
+      "field": "year",
+      "type": "ordinal",
+      "scale": {
+        "scheme": "tealblues"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "year"
+      },
+      {
+        "field": "enrolments",
+        "format": ","
+      },
+      {
+        "field": "commencements",
+        "format": ","
+      },
+      {
+        "field": "education_exports_billion_aud",
+        "title": "Exports $b"
+      }
+    ]
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "gridColor": "#e7e2d9",
+      "domainColor": "#c9c1b4",
+      "tickColor": "#c9c1b4",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "title": {
+      "font": "Fraunces, Georgia, serif",
+      "fontSize": 16,
+      "color": "#302c25",
+      "anchor": "start"
+    }
+  }
+}

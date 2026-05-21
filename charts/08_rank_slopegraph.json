@@ -1,0 +1,184 @@
+{
+  "title": "Rank movement from 2024 to 2025",
+  "data": {
+    "url": "data/top_nationalities_2025.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "rank_2024",
+        "rank_2025"
+      ],
+      "as": [
+        "year_rank",
+        "rank"
+      ]
+    },
+    {
+      "calculate": "datum.year_rank == 'rank_2024' ? '2024' : '2025'",
+      "as": "rank_year"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2,
+        "opacity": 0.85
+      },
+      "encoding": {
+        "x": {
+          "field": "rank_year",
+          "type": "ordinal",
+          "title": null
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "sort": "ascending",
+          "scale": {
+            "reverse": true,
+            "domain": [
+              10,
+              1
+            ]
+          },
+          "title": "Rank"
+        },
+        "detail": {
+          "field": "nationality"
+        },
+        "color": {
+          "field": "rank_change_from_2024",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -2,
+              0,
+              2
+            ],
+            "range": [
+              "#be123c",
+              "#64748b",
+              "#0f766e"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "nationality"
+          },
+          {
+            "field": "rank_2024"
+          },
+          {
+            "field": "rank_2025"
+          },
+          {
+            "field": "rank_change_from_2024"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 70
+      },
+      "encoding": {
+        "x": {
+          "field": "rank_year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "reverse": true
+          }
+        },
+        "color": {
+          "field": "rank_change_from_2024",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -2,
+              0,
+              2
+            ],
+            "range": [
+              "#be123c",
+              "#64748b",
+              "#0f766e"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.rank_year == '2025'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 11
+      },
+      "encoding": {
+        "x": {
+          "field": "rank_year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "reverse": true
+          }
+        },
+        "text": {
+          "field": "nationality"
+        }
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "gridColor": "#e7e2d9",
+      "domainColor": "#c9c1b4",
+      "tickColor": "#c9c1b4",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "legend": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "title": {
+      "font": "Fraunces, Georgia, serif",
+      "fontSize": 16,
+      "color": "#302c25",
+      "anchor": "start"
+    }
+  }
+}
