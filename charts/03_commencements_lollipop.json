@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "New commencements are below the 2024 peak",
+  "data": {
+    "values": [
+      {"year": "2019", "commencements": 161000, "baseline": 0},
+      {"year": "2020", "commencements": 123000, "baseline": 0},
+      {"year": "2021", "commencements": 86000, "baseline": 0},
+      {"year": "2022", "commencements": 113000, "baseline": 0},
+      {"year": "2023", "commencements": 163000, "baseline": 0},
+      {"year": "2024", "commencements": 172000, "baseline": 0},
+      {"year": "2025", "commencements": 147000, "baseline": 0}
+    ]
+  },
+  "width": "container",
+  "height": 300,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "layer": [
+    {
+      "mark": {"type": "rule", "stroke": "#d6cfc3", "strokeWidth": 2},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "title": null},
+        "y": {"field": "baseline", "type": "quantitative", "title": "Commencements", "axis": {"format": ","}},
+        "y2": {"field": "commencements"}
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 160, "color": "#b45309"},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "title": null},
+        "y": {"field": "commencements", "type": "quantitative", "title": "Commencements", "axis": {"format": ","}},
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "commencements", "type": "quantitative", "format": ",", "title": "Commencements"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year == '2024' || datum.year == '2025'"}],
+      "mark": {"type": "text", "dy": -15, "fontWeight": "bold", "color": "#7c2d12"},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "commencements", "type": "quantitative"},
+        "text": {"field": "commencements", "type": "quantitative", "format": ","}
+      }
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": null},
+    "axis": {
+      "labelFont": "Inter, system-ui, sans-serif",
+      "titleFont": "Inter, system-ui, sans-serif",
+      "gridColor": "#e7e2d9",
+      "domainColor": "#c9c1b4",
+      "tickColor": "#c9c1b4",
+      "labelColor": "#302c25",
+      "titleColor": "#302c25"
+    },
+    "title": {
+      "font": "Fraunces, Georgia, serif",
+      "fontSize": 16,
+      "color": "#302c25",
+      "anchor": "start"
+    }
+  }
+}
