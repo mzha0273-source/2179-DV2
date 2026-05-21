@@ -1,8 +1,21 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "New commencements are below the 2024 peak",
   "data": {
     "url": "data/vic_international_education_yearly.csv"
   },
+  "width": "container",
+  "height": 300,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
+  "transform": [
+    {
+      "calculate": "0",
+      "as": "baseline"
+    }
+  ],
   "layer": [
     {
       "mark": {
@@ -17,7 +30,8 @@
           "title": null
         },
         "y": {
-          "datum": 0
+          "field": "baseline",
+          "type": "quantitative"
         },
         "y2": {
           "field": "commencements"
@@ -33,23 +47,28 @@
       "encoding": {
         "x": {
           "field": "year",
-          "type": "ordinal"
+          "type": "ordinal",
+          "title": null
         },
         "y": {
           "field": "commencements",
           "type": "quantitative",
           "title": "Commencements",
           "axis": {
-            "format": "~s"
+            "format": ","
           }
         },
         "tooltip": [
           {
-            "field": "year"
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
           },
           {
             "field": "commencements",
-            "format": ","
+            "type": "quantitative",
+            "format": ",",
+            "title": "Commencements"
           }
         ]
       }
@@ -77,18 +96,12 @@
         },
         "text": {
           "field": "commencements",
+          "type": "quantitative",
           "format": ","
         }
       }
     }
   ],
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 300,
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
   "config": {
     "background": "transparent",
     "view": {
